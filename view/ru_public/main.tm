@@ -9,7 +9,7 @@
     <script src="https://kit.fontawesome.com/de9f65bcf0.js" crossorigin="anonymous"></script>
 
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon">
-	<title>LIMB</title>
+	<title>Магазин</title>
 
 </head>
 <body>
@@ -17,14 +17,29 @@
 
 
 		<div class = "page" id = "one">
-			<div class="names"><h1 class="text-start pt-3 pb-3"><span>LIMB1000</span></h1></div>
-			<div class="description">
-				<h1 id = "php">PHP 8.0</h1>
-				<h1 id = "bootstrap">BOOTSTRAP 5</h1>
-				<h1 id = "mysqli">MYSQLI 8.0</h1>
-				<h1 id = "js">JQUERY</h1>
-				<h3 id = "say">"Вместо этой страницы мог бы быть Ваш сайт"</h3>
-			</div>
+			<div class="container">
+			    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+			      <a href="%name_site%/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+			        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+			        <span class="fs-4">Магазин</span>
+			      </a>
+
+			      <ul class="nav nav-pills">
+			        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Категории</a></li>
+			        <li class="nav-item"><a href="#" class="nav-link">Корзина</a></li>
+
+			        %startnoauth%
+			        <li class="nav-item"><a href="%name_site%/auth" class="nav-link">Войти</a></li>
+			        <li class="nav-item"><a href="%name_site%/registration" class="nav-link">Регистрация</a>
+			        %endnoauth%
+
+			        %startuser%
+			        <li class="nav-item"><a href="%name_site%/destructauth" class="nav-link">Выйти</a>
+			        %enduser%
+			        </li>
+			      </ul>
+			    </header>
+			  </div>
 		</div>
 
 		<div class = "page p-3" id = "two">

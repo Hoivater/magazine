@@ -1,6 +1,7 @@
 <?
 namespace limb\code\site;
 use limb\app\base as Base; #для работы с базой данный
+use limb\app\worker as Worker; #для работы с базой данный
 	/**
 	 * работа с данными таблицы
 	 *
@@ -40,13 +41,7 @@ use limb\app\base as Base; #для работы с базой данный
 		{
 			$limb = new Worker\Limb();
 			$page_ini = parse_ini_file(__DIR__."/../../view/".$this -> language."page.ini");
-			$si = new Base\SearchInq("39t_article");
-			$si -> selectQ();
-			$si -> orderDescQ();
-			$result = $si -> resQ();  //массив со всеми записями
-
-			if(isset($result[0]["id"])){
-
+			
 				$template = [
 					"norepeat" => ["%title%"],
 					"internal" => [["name" => "content", "folder" => "main"]],
@@ -55,19 +50,13 @@ use limb\app\base as Base; #для работы с базой данный
 
 				$data = [
 					"norepeat" => ["title" => $page_ini["main_page_title"]],
-					"repeat_tm" => [$result]
+					"repeat_tm" => [[[]]]
 				];
 				$render = $limb -> TemplateMaster($template, $data, $auth, $this -> html);
 
 				return $render;
 
-			}
-			else
-			{
-				$ini = parse_ini_file(__DIR__."/../../../setting.ini");
-				header('Location: '.$ini["name_site"]."/view/error/404.php");
-				exit();
-			}
+			
 		}
 	}
 ?>

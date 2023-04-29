@@ -7,7 +7,7 @@
 	 * -проверка подключения к бд(этот статус выводится на всех страницах);
 	 * -проверка общих настроек;
 	 */
-	class MainPage extends MainTable
+	class MenuPage extends MenuTable
 	{
 		use tPage;
 
@@ -21,14 +21,19 @@
 		}
 		#метод для сборки страницы
 		#вся работа с базой данных идет в родительском классе
+		#любой возврат собранной таблицы должен возвращаться как
+		#$this -> page = $this -> html;
 		public function Page()
 		{
-			if(!isset($_SESSION))
-			{
-				session_start();
-			}
-			$auth = Base\Control\Control::IsRules();
-			$this -> page = $this -> Limb($auth);
+			// if(!isset($_SESSION))
+			// {
+			// 	session_start();
+			// }
+			// $auth = Base\Control\Control::IsRules();
+			// $this -> page = $this -> Limb($auth, $id);
+
+
+
 
 		}
 
