@@ -1,54 +1,6 @@
 body{
 	background: #FFFFFF;
 }
-.page{
-	height: 100vh;
-}
-.main .names{
-	background: #fff;
-}
-#php{
-	background: #fff;
-	position: absolute;
-}
-#mysqli{
-	background: #fff;
-	position: absolute;
-	bottom: 50vh;
-	left: 0;
-}
-#js{
-	background: #fff;
-	position: absolute;
-	bottom: 50vh;
-	right: 0;
-}
-#say{
-	background: #fff;
-	position: absolute;
-	bottom: 0vh;
-	right: 50wh;
-}
-#bootstrap{
-	background: #fff;
-	position: absolute;
-	bottom: 0;
-	right: 0;
-}
-#one{
-	background-image: url(/resourse/visible/logo.svg); /* Путь к фоновому рисунку */
-	background-position: center center; /* Положение фона */
-    background-repeat: no-repeat; /* Отменяем повторение фона */
-    background-size: 250px;
-}
-#one h1 span{
-	color: red;
-}
-#one h1{
-	font-size: 400%;
-}
-#two{
-	background: #303841;
-	color: #D7DDE8;
-	font-size: 130%;
+.search_string{
+	background: #ffffff;
 }

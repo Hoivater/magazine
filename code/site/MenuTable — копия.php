@@ -51,10 +51,10 @@
 			for($i = 0; $i <= $num-1; $i++)
 			{
 				$id = Control\Generate::this_idgenerate();
-				$category = Control\Generate::varchargenerate(10);
+				$category = Control\Generate::varchargenerate(40);
 				$subcategory = Control\Generate::intgenerate(2);
 				$value = Control\Generate::linkgenerate($category);
-				$visible = "rect846.png";
+				$visible = 0;
 				$value = "".$id.", '".$category."', '".$subcategory."', '".$value."', '".$visible."'";
 				$ri = new Base\RedactionInq($name77656756, $table_key757658);
 				$result = $ri -> insert($value);
@@ -70,7 +70,7 @@
 			$si = new Base\SearchInq("fr3452_menu");
 			
 			$si -> selectQ();
-			$si -> orderAscQ("id");
+			$si -> orderDescQ();
 			$result = $si -> resQ();  //массив со всеми записями
 			$top = [];
 			$sub_top = [];
@@ -130,7 +130,7 @@
 				}
 			}
 
-			return count($array) * 250;
+			return count($array) * 222;
 		}
 		public static function TextForTwoMenu($id, $language, $result, $limb, $auth)
 		{

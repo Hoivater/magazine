@@ -39,17 +39,19 @@ use limb\app\worker as Worker; #для работы с базой данный
 		}
 		protected function Limb($auth = "noauth")#сборщик страницы
 		{
+
+			$menu = MenuTable::MenuLimb($this -> language, $auth);
 			$limb = new Worker\Limb();
 			$page_ini = parse_ini_file(__DIR__."/../../view/".$this -> language."page.ini");
 			
 				$template = [
-					"norepeat" => ["%title%"],
+					"norepeat" => ["%title%", "%description%", "%keywords%", "%menu%"],
 					"internal" => [["name" => "content", "folder" => "main"]],
 					"repeat_tm" => ["menu"]
 				];
 
 				$data = [
-					"norepeat" => ["title" => $page_ini["main_page_title"]],
+					"norepeat" => ["title" => $page_ini["main_page_title"], "description" => $page_ini["main_page_description"], "keywords" => $page_ini["main_page_keywords"], "menu" => $menu],
 					"repeat_tm" => [[[]]]
 				];
 				$render = $limb -> TemplateMaster($template, $data, $auth, $this -> html);
