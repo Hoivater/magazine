@@ -46,7 +46,7 @@ use limb\app\worker as Worker; #для работы с базой данный
 			
 				$template = [
 					"norepeat" => ["%title%", "%description%", "%keywords%", "%menu%"],
-					"internal" => [["name" => "content", "folder" => "main"]],
+					"internal" => [["name" => "content", "folder" => "main"], ["name" => "header", "folder" => "header"]],
 					"repeat_tm" => ["menu"]
 				];
 
