@@ -22,7 +22,12 @@
 </li>
 ^end_repeat_menu^
 			  <li class="nav-item" role="presentation">
+			  	%startnoauth%
 			    <button class="nav-link" id="models-tab" data-bs-toggle="tab" data-bs-target="#models" type="button" role="tab" aria-controls="models" aria-selected="false">Вход</button>
+			    %endnoauth%
+			    %startall%
+			    <button class="nav-link" id="models-tab" data-bs-toggle="tab" data-bs-target="#models" type="button" role="tab" aria-controls="models" aria-selected="false">Кабинет</button>
+			    %endall%
 			  </li>
 			</ul>
 
@@ -42,7 +47,7 @@
 	  <div class="tab-pane fade" id="models" role="tabpanel" aria-labelledby="models-tab">
   		<div class="box_max_size">
 		  	<ul>
-		  		%startnoauth%
+%startnoauth%
 		  		<li class="p-2">
 		  			<a href="%name_site%/auth">
 		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
@@ -56,22 +61,90 @@
 		  				<h3 class="description_foto">Регистрация</h3>
 		  			</a>
 		  		</li>
-				%endnoauth%
-				%startuser%
+%endnoauth%
+%startadmin%
+		  		<li class="p-2">
+		  			<a href="%name_site%/destructauth">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">Склад</h3>
+		  			</a>
+		  		</li>
+		  		<li class="p-2">
+		  			<a href="%name_site%/destructauth">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">Статистика</h3>
+		  			</a>
+		  		</li>
+		  		<li class="p-2">
+		  			<a href="%name_site%/destructauth">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">Пользователи</h3>
+		  			</a>
+		  		</li>
+		  		<li class="p-2">
+		  			<a href="%name_site%/destructauth">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">+ Новость</h3>
+		  			</a>
+		  		</li>
+		  		<li class="p-2">
+		  			<a href="%name_site%/destructauth">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">+ коробку</h3>
+		  			</a>
+		  		</li>
+		  		<li class="p-2">
+		  			<a href="%name_site%/admin/newtoy">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">+ игрушка</h3>
+		  			</a>
+		  		</li>
+		  		<li class="p-2">
+		  			<a href="%name_site%/destructauth">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">+ пряжа</h3>
+		  			</a>
+		  		</li>
+		  		<li class="p-2">
+		  			<a href="%name_site%/destructauth">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">+ крючки</h3>
+		  			</a>
+		  		</li>
+		  		<li class="p-2">
+		  			<a href="%name_site%/destructauth">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">+ прочее</h3>
+		  			</a>
+		  		</li>
+		  		<li class="p-2">
+		  			<a href="%name_site%/destructauth">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">Редактировать меню</h3>
+		  			</a>
+		  		</li>
+%endadmin%
+		  		
+					<li class="p-2">
+		  			<a href="%name_site%/basket">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">Корзина</h3>
+		  			</a>
+		  		</li>
+					<li class="p-2">
+		  			<a href="%name_site%/basket">
+		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
+		  				<h3 class="description_foto">Сравнение</h3>
+		  			</a>
+		  		</li>
+%startall%
 		  		<li class="p-2">
 		  			<a href="%name_site%/destructauth">
 		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
 		  				<h3 class="description_foto">Выход</h3>
 		  			</a>
 		  		</li>
-		  		%enduser%
-
-		  		<li class="p-2">
-		  			<a href="%name_site%/basket">
-		  				<img src="/resourse/visible/rect846.png" class="img-fluid">
-		  				<h3 class="description_foto">Корзина</h3>
-		  			</a>
-		  		</li>
+%endall%
 		  	</ul>
 	  	</div>
 

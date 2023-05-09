@@ -9,14 +9,14 @@
 	 * работа с данными таблицы
 	 *
 	 */
-	class ProductTable
+	class ToysTable
 	{
-		public $tmpltProduct = ['%id%', '%name%', '%link%', '%description%', '%condition%', '%price_start%', '%price_end%', '%character%', '%foto%', '%type%', '%avaibility%', '%reserve%', '%date_creation%'];//массив из таблиц
-		public $resultProduct;//финишная сборка для шаблона для возврата в _Page
-		public $name = 'fr3452_product';//имя таблицы которое используется по умолчанию
-		public $table_key = "`id`, `name`, `link`, `description`, `condition`, `price_start`, `price_end`, `character`, `foto`, `type`, `avaibility`, `reserve`, `date_creation`";
+		public $tmpltToys = ['%id%', '%name%', '%link%', '%description%', '%condition%', '%price_start%', '%price_end%', '%character%', '%foto%', '%type%', '%avaibility%', '%reserve%', '%keywords%', '%description_main%', '%manufacturer%', '%structure%', '%weight%', '%length%', '%forinstrument%', '%complect%', '%date_creation%'];//массив из таблиц
+		public $resultToys;//финишная сборка для шаблона для возврата в _Page
+		public $name = 'fr3452_toys';//имя таблицы которое используется по умолчанию
+		public $table_key = "`id`, `name`, `link`, `description`, `condition`, `price_start`, `price_end`, `character`, `foto`, `type`, `avaibility`, `reserve`, `keywords`, `description_main`, `manufacturer`, `structure`, `weight`, `length`, `forinstrument`, `complect`, `date_creation`";
 		protected $language;
-		#public $replace = [$id, $name, $link, $description, $condition, $price_start, $price_end, $character, $foto, $type, $avaibility, $reserve, $date_creation];
+		#public $replace = [$id, $name, $link, $description, $condition, $price_start, $price_end, $character, $foto, $type, $avaibility, $reserve, $keywords, $description_main, $manufacturer, $structure, $weight, $length, $forinstrument, $complect, $date_creation];
 
 
 		public function __construct()
@@ -46,8 +46,8 @@
 		#функция для автозаполнения созданной таблицы, можно корретировать функции, например выбрать fotogenerate /в будущем =)
 		public static function insertFieldLimb($num)
 		{
-			$name77656756 = 'fr3452_product';
-			$table_key757658 = "`id`, `name`, `link`, `description`, `condition`, `price_start`, `price_end`, `character`, `foto`, `type`, `avaibility`, `reserve`, `date_creation`";
+			$name77656756 = 'fr3452_toys';
+			$table_key757658 = "`id`, `name`, `link`, `description`, `condition`, `price_start`, `price_end`, `character`, `foto`, `type`, `avaibility`, `reserve`, `keywords`, `description_main`, `manufacturer`, `structure`, `weight`, `length`, `forinstrument`, `complect`, `date_creation`";
 			for($i = 0; $i <= $num-1; $i++)
 			{
 			$id = Control\Generate::this_idgenerate();
@@ -62,8 +62,16 @@
 			$type = Control\Generate::textgenerate();
 			$avaibility = Control\Generate::booleangenerate();
 			$reserve = Control\Generate::intgenerate(10);
+			$keywords = Control\Generate::varchargenerate(250);
+			$description_main = Control\Generate::textgenerate();
+			$manufacturer = Control\Generate::textgenerate();
+			$structure = Control\Generate::textgenerate();
+			$weight = Control\Generate::intgenerate(10);
+			$length = Control\Generate::intgenerate(10);
+			$forinstrument = Control\Generate::textgenerate();
+			$complect = Control\Generate::booleangenerate();
 			$date_creation = Control\Generate::this_dategenerate();
-			$value = "'".$id."', '".$name."', '".$link."', '".$description."', '".$condition."', '".$price_start."', '".$price_end."', '".$character."', '".$foto."', '".$type."', '".$avaibility."', '".$reserve."', '".$date_creation."'";
+			$value = "'".$id."', '".$name."', '".$link."', '".$description."', '".$condition."', '".$price_start."', '".$price_end."', '".$character."', '".$foto."', '".$type."', '".$avaibility."', '".$reserve."', '".$keywords."', '".$description_main."', '".$manufacturer."', '".$structure."', '".$weight."', '".$length."', '".$forinstrument."', '".$complect."', '".$date_creation."'";
 			$ri = new Base\RedactionInq($name77656756, $table_key757658);
 			$result = $ri -> insert($value);
 			}

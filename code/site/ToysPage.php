@@ -7,7 +7,7 @@
 	 * -проверка подключения к бд(этот статус выводится на всех страницах);
 	 * -проверка общих настроек;
 	 */
-	class ProductPage extends ProductTable
+	class ToysPage extends ToysTable
 	{
 		use tPage;
 

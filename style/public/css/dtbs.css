@@ -16,6 +16,88 @@ body{
 	-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
 }
+
+/*фильтр*/
+.filtr{
+	font-weight: bold;
+	cursor: pointer;
+	border-top: 2px solid blue;
+}
+.filtr p{
+	margin: 0;
+	padding: 10px;
+}
+.filtr:hover{
+	border-top: 0px solid blue;
+}
+/*фильтр*/
+
+/*товар*/
+.cards{
+	position: relative;
+	overflow: hidden;
+	border-radius: 10px 10px 0 0;
+}
+
+.price_card{
+	color: white;
+	width: 70%;
+	background: blue;
+	-webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    position: absolute;
+    bottom: 19%;
+    right: -13%;
+}
+.standart_block:hover .main_img{
+	/*border-bottom: 5px solid blue;*/
+	/*border-right: 5px solid blue;*/
+}
+.word_sort{
+	color: grey;
+}
 .standart_block{
-	
+	border: 1px solid #d5d5d5;
+	border-radius: 10px;
+	padding: 0;
+	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.text_cardochka{
+	border-left: 3px solid blue;
+	margin-left: 3px;
+}
+.menu_card{
+	float: left;
+}
+.wrapper_basket, .wrapper_compare{
+	border: 1px solid #d5d5d5;
+	border-radius: 30px;
+	width: 60px;
+	margin: 6px;
+	padding: 10px;
+}
+.in_basket{
+	width: 40px;
+	cursor: pointer;
+	/*margin: 6px;*/
+}
+.in_basket:hover{
+  display: inline-block;
+  animation: rotation 5s infinite linear;
+}
+
+@keyframes rotation {
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+    padding: 20px;
+  }
+}
+/*товар*/
+.clean{
+	clear: both;
 }
